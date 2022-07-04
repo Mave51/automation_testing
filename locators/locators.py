@@ -36,7 +36,7 @@ class MainPageLocators:
     description_of_product_span = (By.XPATH, '//*[@id="homefeatured"]/li[1]/div/div[2]/h5/a')
     proceed_to_checkout_button = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span')
     proceed_to_checkout_in_cart_button = (
-    By.XPATH, "//a [@class='button btn btn-default standard-checkout button-medium']")
+        By.XPATH, "//a [@class='button btn btn-default standard-checkout button-medium']")
     proceed_to_checkout_when_user_logged_button = (By.XPATH, '//*[@id="center_column"]/form/p/button/span')
     terms_of_service_agreement_checkbox = (By.ID, 'cgv')
     proceed_to_checkout_after_choosing_delivery_span = (By.XPATH, '//*[@id="form"]/p/button/span')
@@ -55,4 +55,11 @@ class ContactPageLocators:
     order_reference_input = (By.ID, "id_order")
     leave_message_input = (By.ID, "message")
     submit_message_button = (By.ID, "submitMessage")
-    message_successfully_sent_msg = (By.XPATH, "//p [text()='Your message has been successfully sent to our team.']")
+    message_successfully_sent_msg = (By.XPATH, "//p [text()='Your message has been successfully sent to our team']")
+
+
+class NewsletterLocators:
+    email_address = (By.ID, "newsletter-input")
+    submit_newsletter_button = (By.NAME, "submitNewsletter")
+    newsletter_subscribed_successfully = (By.XPATH, "/html/body/div/div[2]/div/p")
+    newsletter_not_subscribed_error = (By.XPATH, "/html/body/div/div[2]/div/p")

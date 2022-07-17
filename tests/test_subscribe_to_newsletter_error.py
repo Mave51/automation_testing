@@ -6,7 +6,7 @@ import pytest
 from pages.main_page import MainPage
 
 
-@pytest.mark.usefixtures("setup")
+@pytest.mark.usefixtures("test_setup")
 class TestSubscribeToNewsletter:
     def test_subscribe_to_the_newsletter(self):
 

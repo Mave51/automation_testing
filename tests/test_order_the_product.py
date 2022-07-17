@@ -1,11 +1,10 @@
 import time
-
 import pytest
 from pages.log_in_page import LogInPage
 from pages.shopping_main_page import ShoppingMainPage
 
 
-@pytest.mark.usefixtures("setup")
+@pytest.mark.usefixtures("test_setup")
 class TestOrderProductPage:
     def test_order_product(self):
         order_the_product = ShoppingMainPage(self.driver)

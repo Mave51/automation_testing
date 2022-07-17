@@ -4,7 +4,7 @@ import pytest
 from pages.register_page import RegisterPage
 
 
-@pytest.mark.usefixtures("setup")
+@pytest.mark.usefixtures("test_setup")
 class TestRegisterAccount:
 
     def test_create_account(self):

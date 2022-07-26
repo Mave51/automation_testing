@@ -1,15 +1,23 @@
-from locators import locators
+from selenium.webdriver.common.by import By
 
 
 class LogInPage:
+
     def __init__(self, driver):
         self.driver = driver
+
+        log_in_email_input = (By.ID, "email")
+        log_in_password_input = (By.ID, "passwd")
+        log_in_submit_button = (By.ID, "SubmitLogin")
+        user_logged_msg = (By.XPATH, "//p [@class='info-account']")
+        log_in_failed_msg = (By.XPATH, "//li [text()='Authentication failed.']")
+
         # Login page elements
-        self.log_in_email = locators.LogInPageLocators.log_in_email_input
-        self.log_in_password = locators.LogInPageLocators.log_in_password_input
-        self.log_in_submit_button = locators.LogInPageLocators.log_in_submit_button
-        self.user_logged_msg = locators.LogInPageLocators.user_logged_msg
-        self.user_login_failed_msg = locators.LogInPageLocators.log_in_failed_msg
+        self.log_in_email = log_in_email_input
+        self.log_in_password = log_in_password_input
+        self.log_in_submit_button = log_in_submit_button
+        self.user_logged_msg = user_logged_msg
+        self.user_login_failed_msg = log_in_failed_msg
 
     def open_page(self):
         self.driver.get("http://automationpractice.com/index.php?controller=authentication&back=my-account")

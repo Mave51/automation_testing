@@ -1,14 +1,19 @@
-import locators.locators
+from selenium.webdriver.common.by import By
 
 
 class MainPage:
     def __init__(self, driver):
         self.driver = driver
+        email_address = (By.ID, "newsletter-input")
+        submit_newsletter_button = (By.NAME, "submitNewsletter")
+        newsletter_subscribed_successfully = (By.XPATH, "/html/body/div/div[2]/div/p")
+        newsletter_not_subscribed_error = (By.XPATH, "/html/body/div/div[2]/div/p")
+
         # Main page elements
-        self.newsletter_subscribe = locators.locators.NewsletterLocators.email_address
-        self.submit_subscribe_btn = locators.locators.NewsletterLocators.submit_newsletter_button
-        self.newsletter_subscribed_successfully_msg = locators.locators.NewsletterLocators.newsletter_subscribed_successfully
-        self.newsletter_not_subscribed_error_msg = locators.locators.NewsletterLocators.newsletter_not_subscribed_error
+        self.newsletter_subscribe = email_address
+        self.submit_subscribe_btn = submit_newsletter_button
+        self.newsletter_subscribed_successfully_msg = newsletter_subscribed_successfully
+        self.newsletter_not_subscribed_error_msg = newsletter_not_subscribed_error
 
     def open_page(self):
         self.driver.get("http://automationpractice.com/index.php")

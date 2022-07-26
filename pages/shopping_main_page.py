@@ -1,22 +1,34 @@
 from selenium.webdriver import ActionChains
-
-from locators import locators
+from selenium.webdriver.common.by import By
 
 
 class ShoppingMainPage:
     def __init__(self, driver):
         self.driver = driver
+
+        add_to_cart_button = (By.XPATH, "//*[@id='homefeatured']/li[1]/div/div[2]/div[2]/a[1]/span")
+        description_of_product_span = (By.XPATH, '//*[@id="homefeatured"]/li[1]/div/div[2]/h5/a')
+        proceed_to_checkout_button = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span')
+        proceed_to_checkout_in_cart_button = (
+            By.XPATH, "//a [@class='button btn btn-default standard-checkout button-medium']")
+        proceed_to_checkout_when_user_logged_button = (By.XPATH, '//*[@id="center_column"]/form/p/button/span')
+        terms_of_service_agreement_checkbox = (By.ID, 'cgv')
+        proceed_to_checkout_after_choosing_delivery_span = (By.XPATH, '//*[@id="form"]/p/button/span')
+        choose_payment_span = (By.XPATH, '//*[@id="HOOK_PAYMENT"]/div[1]/div/p/a')
+        confirm_order_span = (By.XPATH, "// button[@class='button btn btn-default button-medium']")
+        order_is_complete_msg = (By.XPATH, '//*[@id="center_column"]/div/p/strong')
+
         # Shopping Main Page Elements
-        self.add_to_cart = locators.MainPageLocators.add_to_cart_button
-        self.description_of_product = locators.MainPageLocators.description_of_product_span
-        self.proceed_to_checkout = locators.MainPageLocators.proceed_to_checkout_button
-        self.proceed_to_checkout_in_cart = locators.MainPageLocators.proceed_to_checkout_in_cart_button
-        self.proceed_to_checkout_when_user_logged = locators.MainPageLocators.proceed_to_checkout_when_user_logged_button
-        self.terms_of_service_agreement = locators.MainPageLocators.terms_of_service_agreement_checkbox
-        self.proceed_to_checkout_after_choosing_delivery = locators.MainPageLocators.proceed_to_checkout_after_choosing_delivery_span
-        self.choose_payment = locators.MainPageLocators.choose_payment_span
-        self.confirm_order = locators.MainPageLocators.confirm_order_span
-        self.order_is_complete_msg = locators.MainPageLocators.order_is_complete_msg
+        self.add_to_cart = add_to_cart_button
+        self.description_of_product = description_of_product_span
+        self.proceed_to_checkout = proceed_to_checkout_button
+        self.proceed_to_checkout_in_cart = proceed_to_checkout_in_cart_button
+        self.proceed_to_checkout_when_user_logged = proceed_to_checkout_when_user_logged_button
+        self.terms_of_service_agreement = terms_of_service_agreement_checkbox
+        self.proceed_to_checkout_after_choosing_delivery = proceed_to_checkout_after_choosing_delivery_span
+        self.choose_payment = choose_payment_span
+        self.confirm_order = confirm_order_span
+        self.order_is_complete_msg = order_is_complete_msg
 
     def open_page(self):
         self.driver.get("http://automationpractice.com/index.php")

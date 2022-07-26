@@ -3,7 +3,7 @@ import pytest
 from pages.contact_page import ContactPage
 
 
-@pytest.mark.usefixtures("setup")
+@pytest.mark.usefixtures("test_setup")
 class TestMakeContact:
     def test_make_contact(self):
         contact_page = ContactPage(self.driver)

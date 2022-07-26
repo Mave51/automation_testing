@@ -5,7 +5,7 @@ import pytest
 from pages.log_in_page import LogInPage
 
 
-@pytest.mark.usefixtures("setup")
+@pytest.mark.usefixtures("test_setup")
 class TestLoginPage:
     def test_log_in(self):
         log_in_page = LogInPage(self.driver)

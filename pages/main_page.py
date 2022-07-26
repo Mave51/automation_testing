@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 class MainPage:
     def __init__(self, driver):
         self.driver = driver
-
         email_address = (By.ID, "newsletter-input")
         submit_newsletter_button = (By.NAME, "submitNewsletter")
         newsletter_subscribed_successfully = (By.XPATH, "/html/body/div/div[2]/div/p")
